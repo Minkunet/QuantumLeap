@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+        margin: 0;
+            font-family: 'Poppins', sans-serif;
+                box-sizing: border-box;
+                    scroll-behavior: smooth;
+                    }
+
+                    body {
+                        min-height: 100vh;
+                            background: linear-gradient(#2b1055, #7597de);
+                                display: flex;
+                                    justify-content: center;
+                                        align-items: center;
+                                            flex-direction: column;
+                                                color: #fff;
+                                                }
+
+                                                h3 {
+                                                    font-size: 2em;
+                                                        margin-bottom: 20px;
+                                                            text-align: center;
+                                                            }
+
+                                                            label, input, .button-group {
+                                                                display: block;
+                                                                    width: 100%;
+                                                                        max-width: 500px;
+                                                                            margin: 0 auto 10px;
+                                                                            }
+
+                                                                            label {
+                                                                                font-size: 1.2em;
+                                                                                    margin-bottom: 5px;
+                                                                                    }
+
+                                                                                    input[type="text"],
+                                                                                    input[type="password"] {
+                                                                                        padding: 10px;
+                                                                                            font-size: 1em;
+                                                                                                border: 2px solid #fff;
+                                                                                                    border-radius: 5px;
+                                                                                                        background: rgba(255, 255, 255, 0.2);
+                                                                                                            color: #fff;
+                                                                                                                transition: background 0.3s, border 0.3s;
+                                                                                                                }
+
+                                                                                                                input[type="text"]:focus,
+                                                                                                                input[type="password"]:focus {
+                                                                                                                    background: rgba(255, 255, 255, 0.5);
+                                                                                                                        border-color: #7597de;
+                                                                                                                            outline: none;
+                                                                                                                            }
+
+                                                                                                                            .input-group {
+                                                                                                                                display: flex;
+                                                                                                                                    justify-content: space-between;
+                                                                                                                                        margin-bottom: 10px;
+                                                                                                                                        }
+
+                                                                                                                                        .input-group input {
+                                                                                                                                            flex: 1;
+                                                                                                                                                margin-right: 5px;
+                                                                                                                                                }
+
+                                                                                                                                                .input-group button {
+                                                                                                                                                    padding: 10px;
+                                                                                                                                                        border: none;
+                                                                                                                                                            border-radius: 5px;
+                                                                                                                                                                background: #fff;
+                                                                                                                                                                    color: #2b1055;
+                                                                                                                                                                        font-size: 1em;
+                                                                                                                                                                            cursor: pointer;
+                                                                                                                                                                                transition: background 0.3s, color 0.3s;
+                                                                                                                                                                                }
+
+                                                                                                                                                                                .input-group button:hover {
+                                                                                                                                                                                    background: #7597de;
+                                                                                                                                                                                        color: #fff;
+                                                                                                                                                                                        }
+
+                                                                                                                                                                                        .button-group {
+                                                                                                                                                                                            text-align: center;
+                                                                                                                                                                                            }
+
+                                                                                                                                                                                            .button-group button {
+                                                                                                                                                                                                padding: 10px 20px;
+                                                                                                                                                                                                    border: none;
+                                                                                                                                                                                                        border-radius: 5px;
+                                                                                                                                                                                                            background: #fff;
+                                                                                                                                                                                                                color: #2b1055;
+                                                                                                                                                                                                                    font-size: 1em;
+                                                                                                                                                                                                                        cursor: pointer;
+                                                                                                                                                                                                                            transition: background 0.3s, color 0.3s;
+                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                            .button-group button:hover {
+                                                                                                                                                                                                                                background: #7597de;
+                                                                                                                                                                                                                                    color: #fff;
+                                                                                                                                                                                                                                    }

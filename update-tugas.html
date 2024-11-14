@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Input Tugas ke Firestore</title>
+        <!-- Import Firebase SDK dari CDN -->
+          <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+              <link rel="stylesheet" href="style-2.css" type="text/css" media="all" />
+              </head>
+              <body>
+
+              <h3>Masukkan Tugas Harian</h3>
+
+              <label for="tanggal">Tanggal:</label>
+              <input type="text" id="tanggal" placeholder="Kamis, 14 November 2024">
+
+              <label for="kode-admin">Kode Administrasi:</label>
+              <input type="password" id="kode-admin" placeholder="Masukkan kode admin">
+
+              <div id="tugas-container">
+                <div class="input-group">
+                    <input type="text" placeholder="Mapel" class="mapel">
+                        <input type="text" placeholder="Tugas" class="tugas">
+                            <button onclick="addTugas()" id="add-button">+</button>
+                                <button onclick="removeTugas(this)">-</button>
+                                  </div>
+                                  </div>
+
+                                  <div class="button-group">
+                                    <button onclick="simpanData()">Simpan ke Firestore</button>
+                                    </div>
+
+                                    <script src="app.js"></script>
+                                    </body>
+                                    </html>
