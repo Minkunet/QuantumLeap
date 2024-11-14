@@ -1,1 +1,84 @@
-const _0x5a73=["\x61\x70\x69\x4B\x65","\x61\x75\x74\x68\x44\x6F\x6D\x61\x69\x6E","\x70\x72\x6F\x6A\x65\x63\x74\x49\x64","\x73\x74\x6F\x72\x61\x67\x65\x42\x75\x63\x6B\x65\x74","\x6D\x65\x73\x73\x61\x67\x69\x6E\x67\x53\x65\x6E\x64\x65\x72\x49\x64","\x61\x70\x70\x49\x64","\x6D\x65\x61\x73\x75\x72\x65\x6D\x65\x6E\x74\x49\x64","\x67\x2D\x57\x37\x43\x4D\x33\x32\x48\x44\x50\x34","\x6D\x61\x78\x54\x75\x67\x61","\x61\x64\x64\x54\x75\x67\x61\x73","\x74\x75\x67\x61\x73\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x73\x42\x79\x43\x6C\x61\x73\x73\x4E\x61\x6D\x65","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x74\x75\x67\x61","\x73\x69\x6D\x70\x61\x6E\x44\x61\x74\x61","\x63\x6F\x64\x65\x41\x64\x6D\x69\x6E","\x72\x65\x6D\x6F\x76\x65\x54\x75\x67\x61\x73","\x2D","\x66\x6F\x72\x45\x61\x63\x68","\x2B","\x63\x6F\x6D\x70\x6C\x65\x74\x65","\x61\x64\x64\x65\x64\x65","\x2C","\x63\x68\x61\x72\x43\x6F\x64\x65\x53\x74\x72\x69\x6E\x67","\x2E","\x2D","\x74\x65\x73\x74"];const firebaseConfig={apiKey:_0x5a73[0],authDomain:_0x5a73[1],projectId:_0x5a73[2],storageBucket:_0x5a73[3],messagingSenderId:_0x5a73[4],appId:_0x5a73[5],measurementId:_0x5a73[6]};firebase[_0x5a73[7]](firebaseConfig);const db=firebase[_0x5a73[8]]();const ADMIN_CODES=[_0x5a73[9],_0x5a73[10],_0x5a73[11],_0x5a73[12],_0x5a73[13],_0x5a73[14]];let maxTugas=7;function addTugas(){const tugasContainer=document[_0x5a73[15]](_0x5a73[16]);const tugasGroups=tugasContainer[_0x5a73[17]](_0x5a73[18]);if(tugasGroups[_0x5a73[19]]<maxTugas){const newGroup=document[_0x5a73[20]](_0x5a73[21]);newGroup[_0x5a73[22]](_0x5a73[23]);newGroup[_0x5a73[24]]=`<input type="text" placeholder="Mapel" class="mapel"><input type="text" placeholder="Tugas" class="tugas"><button onclick="addTugas()">+</button><button onclick="removeTugas(this)">-</button>`;tugasContainer[_0x5a73[25]](newGroup);}}function removeTugas(button){const tugasContainer=document[_0x5a73[15]](_0x5a73[16]);const tugasGroups=tugasContainer[_0x5a73[17]](_0x5a73[18]);if(tugasGroups[_0x5a73[19]]>1){button[_0x5a73[26]]()}function simpanData(){const tanggal=document[_0x5a73[15]](_0x5a73[27])[_0x5a73[28]];const kodeAdmin=document[_0x5a73[15]](_0x5a73[29])[_0x5a73[28]];const tugasContainer=document[_0x5a73[15]](_0x5a73[16]);const mapelInputs=tugasContainer[_0x5a73[17]](_0x5a73[30]);const tugasInputs=tugasContainer[_0x5a73[17]](_0x5a73[31]);const tugasData=[];if(!ADMIN_CODES[_0x5a73[32]](kodeAdmin)){alert(_0x5a73[33]);return;}for(let i=0;i<mapelInputs[_0x5a73[19]];i++){const mapel=mapelInputs[i][_0x5a73[28]];const tugas=tugasInputs[i][_0x5a73[28]];if(mapel&&tugas){tugasData[_0x5a73[34]]({mapel:mapel,tugas:tugas});}}const tugasRef=db[_0x5a73[35]](_0x5a73[36]).doc(tanggal);tugasRef[_0x5a73[37]]({tanggal:tanggal,detail:JSON[_0x5a73[38]](tugasData)})[_0x5a73[39]](()=>{alert(_0x5a73[40]);})[_0x5a73[41]]((error)=>{console[_0x5a73[42]](_0x5a73[43],error);});}}
+// Konfigurasi Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyDH_ycKl1pB1BSzqYdn8IDhDp53U45GwZ8",
+  authDomain: "tugas-c05d3.firebaseapp.com",
+  projectId: "tugas-c05d3",
+  storageBucket: "tugas-c05d3.firebasestorage.app",
+  messagingSenderId: "229292384295",
+  appId: "1:229292384295:web:f8d7210aaa846a73302e02",
+  measurementId: "G-W7CM32HDP4"
+};
+
+// Inisialisasi Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+const ADMIN_CODES = ["KT-01", "SR-01", "BR-01", "KT-02", "SR-02", "BR-02"];
+let maxTugas = 7;
+
+function addTugas() {
+  const tugasContainer = document.getElementById('tugas-container');
+  const tugasGroups = tugasContainer.getElementsByClassName('input-group');
+  
+  if (tugasGroups.length < maxTugas) {
+    const newGroup = document.createElement('div');
+    newGroup.classList.add('input-group');
+    newGroup.innerHTML = `
+      <input type="text" placeholder="Mapel" class="mapel">
+      <input type="text" placeholder="Tugas" class="tugas">
+      <button onclick="addTugas()">+</button>
+      <button onclick="removeTugas(this)">-</button>
+    `;
+    tugasContainer.appendChild(newGroup);
+  }
+}
+
+function removeTugas(button) {
+  const tugasContainer = document.getElementById('tugas-container');
+  const tugasGroups = tugasContainer.getElementsByClassName('input-group');
+
+  if (tugasGroups.length > 1) {
+    button.parentElement.remove();
+  }
+}
+
+function simpanData() {
+  const tanggal = document.getElementById('tanggal').value;
+  const kodeAdmin = document.getElementById('kode-admin').value;
+  const tugasContainer = document.getElementById('tugas-container');
+  const mapelInputs = tugasContainer.getElementsByClassName('mapel');
+  const tugasInputs = tugasContainer.getElementsByClassName('tugas');
+  const tugasData = [];
+
+  // Validasi kode administrasi
+  if (!ADMIN_CODES.includes(kodeAdmin)) {
+    alert("Kode Administrasi salah! Data tidak disimpan.");
+    return;
+  }
+
+  // Mengumpulkan data tugas dalam format JSON yang benar untuk Firestore
+  for (let i = 0; i < mapelInputs.length; i++) {
+    const mapel = mapelInputs[i].value;
+    const tugas = tugasInputs[i].value;
+    if (mapel && tugas) {
+      tugasData.push({
+        mapel: mapel,
+        tugas: tugas
+      });
+    }
+  }
+
+  const tugasRef = db.collection("tugas").doc(tanggal);
+
+  // Simpan data baru dengan format string JSON
+  tugasRef.set({
+    tanggal: tanggal,
+    detail: JSON.stringify(tugasData) // Mengubah array tugas menjadi string JSON
+  })
+  .then(() => {
+    alert("Data berhasil disimpan!");
+  })
+  .catch((error) => {
+    console.error("Error dalam proses penyimpanan data: ", error);
+  });
+}
